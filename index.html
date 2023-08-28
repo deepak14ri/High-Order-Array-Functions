@@ -1,0 +1,191 @@
+<strong>High Order Array Functions</strong>
+
+<script>
+  // 1. values()
+  const array1 = [1, 2, 3];
+  const iterator1 = array1.values();
+  for (const value of iterator1) {
+    console.log(value); // Output: 1, 2, 3
+  }
+
+  // 2. length
+  const array2 = [1, 2, 3];
+  console.log(array2.length); // Output: 3
+
+  // 3. reverse()
+  const array3 = [1, 2, 3];
+  array3.reverse();
+  console.log(array3); // Output: [3, 2, 1]
+
+  // 4. sort()
+  const array4 = [3, 1, 2];
+  array4.sort();
+  console.log(array4); // Output: [1, 2, 3]
+
+  // 5. at()
+  const array5 = [1, 2, 3];
+  console.log(array5.at(1)); // Output: 2
+
+  // 6. fill()
+  const array6 = [1, 2, 3];
+  array6.fill(0);
+  console.log(array6); // Output: [0, 0, 0]
+
+  // 7. from()
+  const iterable = "hello";
+  const newArray7 = Array.from(iterable);
+  console.log(newArray7); // Output: ['h', 'e', 'l', 'l', 'o']
+
+  // 8. join()
+  const array8 = ["Hello", "world"];
+  const joinedString = array8.join(" ");
+  console.log(joinedString); // Output: 'Hello world'
+
+  // 9. toString()
+  const array9 = [1, 2, 3];
+  const arrayString = array9.toString();
+  console.log(arrayString); // Output: '1,2,3'
+
+  // 10. pop()
+  const array10 = [1, 2, 3];
+  const poppedElement = array10.pop();
+  console.log(array10); // Output: [1, 2]
+  console.log(poppedElement); // Output: 3
+
+  // 11. forEach()
+  const array11 = [1, 2, 3];
+  array11.forEach((element) => {
+    console.log(element); // Output: 1, 2, 3
+  });
+
+  // 12. shift()
+  const array12 = [1, 2, 3];
+  const shiftedElement = array12.shift();
+  console.log(array12); // Output: [2, 3]
+  console.log(shiftedElement); // Output: 1
+
+  // 13. copyWithin()
+  const array13 = [1, 2, 3, 4, 5];
+  array13.copyWithin(0, 3);
+  console.log(array13); // Output: [4, 5, 3, 4, 5]
+
+  // 14. push()
+  const array14 = [1, 2, 3];
+  const newLength14 = array14.push(4, 5);
+  console.log(array14); // Output: [1, 2, 3, 4, 5]
+  console.log(newLength14); // Output: 5
+
+  // 15. unshift()
+  const array15 = [3, 4, 5];
+  const newLength15 = array15.unshift(1, 2);
+  console.log(array15); // Output: [1, 2, 3, 4, 5]
+  console.log(newLength15); // Output: 5
+
+  // 16. concat()
+  const array16_1 = [1, 2];
+  const array16_2 = [3, 4];
+  const newArray16 = array16_1.concat(array16_2);
+  console.log(newArray16); // Output: [1, 2, 3, 4]
+
+  // 17. some()
+  const array17 = [1, 2, 3];
+  const hasEvenNumber = array17.some((element) => element % 2 === 0);
+  console.log(hasEvenNumber); // Output: true
+
+  // 18. splice()
+  const array18 = [1, 2, 3, 4, 5];
+  array18.splice(2, 1, "a", "b");
+  console.log(array18); // Output: [1, 2, 'a', 'b', 4, 5]
+
+  // 19. flat()
+  const array19 = [1, [2, 3], [4, [5]]];
+  const flattenedArray = array19.flat(2);
+  console.log(flattenedArray); // Output: [1, 2, 3, 4, 5]
+
+  // 20. lastIndexOf()
+  const array20 = [1, 2, 3, 2, 1];
+  const lastIndex20 = array20.lastIndexOf(2);
+  console.log(lastIndex20); // Output: 3
+
+  // 21. of()
+  const newArray21 = Array.of(1, 2, 3);
+  console.log(newArray21); // Output: [1, 2, 3]
+
+  // 22. every()
+  const array22 = [2, 4, 6];
+  const allEven = array22.every((element) => element % 2 === 0);
+  console.log(allEven); // Output: true
+
+  // 23. slice()
+  const array23 = [1, 2, 3, 4, 5];
+  const slicedArray = array23.slice(1, 4);
+  console.log(slicedArray); // Output: [2, 3, 4]
+
+  // 24. flatMap()
+  const array24 = [1, 2, 3];
+  const mappedArray24 = array24.flatMap((element) => [
+    element * 2,
+    element * 3
+  ]);
+  console.log(mappedArray24); // Output: [2, 3, 4, 6, 6, 9]
+
+  // 25. findIndex()
+  const array25 = [1, 2, 3, 4, 5];
+  const index25 = array25.findIndex((element) => element > 3);
+  console.log(index25); // Output: 3
+
+  // 26. find()
+  const array26 = [1, 2, 3, 4, 5];
+  const value26 = array26.find((element) => element > 3);
+  console.log(value26); // Output: 4
+
+  // 27. includes()
+  const array27 = [1, 2, 3];
+  const includesValue27 = array27.includes(2);
+  console.log(includesValue27); // Output: true
+
+  // 28. entries()
+  const array28 = ["a", "b", "c"];
+  const iterator28 = array28.entries();
+  for (const [index, value] of iterator28) {
+    console.log(index, value);
+    // Output: 0 'a', 1 'b', 2 'c'
+  }
+
+  // 29. reduceRight()
+  const array29 = [1, 2, 3, 4];
+  const sum29 = array29.reduceRight(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+  console.log(sum29); // Output: 10
+
+  // 30. reduce()
+  const array30 = [1, 2, 3, 4];
+  const sum30 = array30.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+  console.log(sum30); // Output: 10
+
+  // 31. isArray()
+  const array31 = [1, 2, 3];
+  console.log(Array.isArray(array31)); // Output: true
+
+  // 32. filter()
+  const array32 = [1, 2, 3, 4, 5];
+  const filteredArray32 = array32.filter((element) => element % 2 === 0);
+  console.log(filteredArray32); // Output: [2, 4]
+
+  // 33. keys()
+  const array33 = ["a", "b", "c"];
+  const iterator33 = array33.keys();
+  for (const key of iterator33) {
+    console.log(key); // Output: 0, 1, 2
+  }
+
+  // 34. map()
+  const array34 = [1, 2, 3];
+  const mappedArray34 = array34.map((element) => element * 2);
+  console.log(mappedArray34); // Output: [2, 4, 6]
+</script>
